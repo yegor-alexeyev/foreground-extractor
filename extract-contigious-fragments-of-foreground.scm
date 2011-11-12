@@ -31,7 +31,7 @@
                               (gimp-edit-cut drawable)
                               (let* ((image_of_fragment (car (gimp-edit-paste-as-new)))
                                      (drawable_of_fragment (car (gimp-image-get-active-drawable image_of_fragment)))
-                                     (filename (string-append "fragment-" (number->string x) "-" (number->string y) ".tiff")))
+                                     (filename (string-append (car (gimp-image-get-filename image)) "-fragment-" (number->string x) "-" (number->string y) ".tiff")))
                                     (file-tiff-save RUN-NONINTERACTIVE image_of_fragment drawable_of_fragment filename filename 0)
                               )   
                           )
