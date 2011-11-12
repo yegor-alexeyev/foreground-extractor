@@ -22,7 +22,7 @@
         (let ((alpha_value (vector-ref (nth 1 (gimp-drawable-get-pixel drawable x y)) 3)))          
           (if (> alpha_value 0)
             (begin  
-              (gimp-fuzzy-select-full drawable x y 255 2 FALSE FALSE 0 0 FALSE FALSE 0)
+              (gimp-fuzzy-select-full drawable x y 255 2 FALSE TRUE 4.2 4.2 FALSE FALSE 0)
               (if (= (car (gimp-selection-is-empty image)) 0)      
                 (let* ((histogram_values  (gimp-histogram drawable 0 0 0))
                        (count_of_non_transparent_pixels (nth 3 histogram_values)))
